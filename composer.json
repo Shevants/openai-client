@@ -1,0 +1,55 @@
+{
+  "name": "shevant/open-ai-client",
+  "version": "1.0.0",
+  "description": "A PHP client for the Open AI API",
+  "keywords": ["api", "client", "php"],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Anton Shevchuk",
+      "email": "anton.shevchuk.1993@gmail.com",
+      "homepage": "https://gitlab.com/public_packages/chatgptclient"
+    }
+  ],
+  "require": {
+    "php": "^8.1.0",
+    "php-http/discovery": "^1.17",
+    "psr/http-client-implementation": "*",
+    "symfony/http-client": "^7.1",
+    "psr/http-client": "^1.0",
+    "nyholm/psr7": "^1.8",
+    "psr/http-factory-implementation": "*"
+  },
+  "autoload": {
+    "psr-4": {
+      "OpenAiClient\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "OpenAiClient\\Tests\\": "tests/"
+    }
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^9.0",
+    "guzzlehttp/guzzle": "^7.0",
+    "phpstan/phpstan": "^1.11",
+    "rector/rector": "^1.1.0"
+  },
+  "config": {
+    "allow-plugins": {
+      "php-http/discovery": true
+    }
+  },
+    "scripts": {
+        "refactor": "rector --debug",
+        "test:refactor": "rector --dry-run",
+        "test:types": "phpstan analyse --ansi",
+        "test:unit": "phpunit --colors=always",
+        "test": [
+            "@test:refactor",
+            "@test:types",
+            "@test:unit"
+        ]
+    }
+}
