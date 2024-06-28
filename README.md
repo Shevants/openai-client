@@ -9,7 +9,7 @@ ChatGptClient is an API client for the OpenAI API, providing a convenient interf
 First, install OpenAI via the [Composer](https://getcomposer.org/) package manager:
 
 ```bash
-composer require shevant/chatgptclient
+composer require shevant/open-ai-client
 ```
 
 Ensure that the `php-http/discovery` composer plugin is allowed to run or install a client manually if your project does not already have a PSR-18 client integrated.
